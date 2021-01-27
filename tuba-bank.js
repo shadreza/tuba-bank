@@ -17,20 +17,34 @@ logInBtn.addEventListener('click',function(){
 })
 
 function setDepositAmount (inputBalance){
-    if(inputBalance<=0){
-        inputBalance=00;
+    if(parseFloat(inputBalance)<0){
+        inputBalance=0;
     }
-    document.getElementById('depositAmmount').innerText=inputBalance;
+    var alreadyAmount = parseFloat(document.getElementById('depositAmmount').innerText);
+    if(alreadyAmount>=0){
+
+    }
+    else{
+        alreadyAmount=0;
+    }
+    document.getElementById('depositAmmount').innerText = alreadyAmount + parseFloat(inputBalance);
 }
 function setWithdrawAmount (inputBalance){
-    if(inputBalance<=0){
-        inputBalance=00;
+    if(inputBalance<0){
+        inputBalance=0;
     }
-    document.getElementById('withdrawAmmount').innerText=inputBalance;
+    var alreadyAmount = parseFloat(document.getElementById('withdrawAmmount').innerText);
+    if(alreadyAmount>=0){
+
+    }
+    else{
+        alreadyAmount=0;
+    }
+    document.getElementById('withdrawAmmount').innerText = alreadyAmount + parseFloat(inputBalance);
 }
 function setBalanceAmount (inputBalance){
     if(inputBalance<=0){
-        inputBalance=00;
+        inputBalance=0;
     }
     document.getElementById('balanceAmmount').innerText=inputBalance;
 }
@@ -40,17 +54,44 @@ setDepositAmount(0);
 setWithdrawAmount(0);
 
 document.getElementById('depositeInToAccountButton').addEventListener('click',function(){
-    var depositeAmmountInput = document.getElementById('depositingAmount').value;
+    var depositeAmmountInput = parseFloat(document.getElementById('depositingAmount').value);
+    if(depositeAmmountInput<0){
+        alert("Invalid Amount!");
+        document.getElementById('depositingAmount').value="deposite your money";
+        return;
+    }
     setDepositAmount(depositeAmmountInput);
-    var totalBalance = document.getElementById('balanceAmmount').innerText;
+    var totalBalance = parseFloat(document.getElementById('balanceAmmount').innerText);
+    if(totalBalance>=0){
+
+    }
+    else{
+        totalBalance=0;
+    }
     setBalanceAmount(totalBalance+depositeAmmountInput);
-    document.getElementById('depositingAmount').innerText=0;
+    document.getElementById('depositingAmount').value="deposite your money";
 })
 
 document.getElementById('withdrawFromAccountButton').addEventListener('click',function(){
-    var withdrawAmmountInput = document.getElementById('withdrawingAmmount').value;
+    var withdrawAmmountInput = parseFloat(document.getElementById('withdrawingAmmount').value);
+    if(withdrawAmmountInput<0){
+        alert("Invalid Amount!");
+        document.getElementById('withdrawingAmmount').value="withdraw your money";
+        return;
+    }
+    var totalBalance = parseFloat(document.getElementById('balanceAmmount').innerText);
+    if(withdrawAmmountInput>totalBalance){
+        alert("Not Enough Balance!");
+        document.getElementById('withdrawingAmmount').value="withdraw your money";
+        return;
+    }
     setWithdrawAmount(withdrawAmmountInput);
-    var totalBalance = document.getElementById('balanceAmmount').innerText;
+    if(totalBalance>=0){
+
+    }
+    else{
+        totalBalance=0;
+    }
     setBalanceAmount(totalBalance-withdrawAmmountInput);
-    document.getElementById('withdrawingAmmount').innerText=0;
+    document.getElementById('withdrawingAmmount').value="withdraw your money";
 })
