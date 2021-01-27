@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuba's' Bank</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <section id="logInArea">
+        <h1 id="bankHeading">Welcome To Tuba's Bank</h1>
+        <section class="logInContainer" id="logInAreaContainer">
+            <h3>Log In</h3>
+            <input class="emailInputBox inputAtLogin form-control" placeholder="email " type="email" required>
+            <input class="passwordInputBox inputAtLogin form-control" placeholder="password" type="password" required>
+            <input type="submit" value="Log In" class="btn btn-success" id="logInButton">
+        </section>
+    </section>
+
+    <section id="transactionArea">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card" id="depositCard">
+                    <div class="card-body">
+                        <h5 class="card-title">Deposit</h5>
+                        <h1 class="card-text d-flex justify-content-between">$ <strong id="depositAmmount"></strong>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" id="withdrawCard">
+                    <div class="card-body">
+                        <h5 class="card-title">Withdraw</h5>
+                        <h1 class="card-text d-flex justify-content-between">$ <strong id="withdrawAmmount"></strong>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" id="balanceCard">
+                    <div class="card-body">
+                        <h5 class="card-title">Balance</h5>
+                        <h1 class="card-text d-flex justify-content-between">$ <strong id="balanceAmmount"></strong>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="moneyDepositAndWithdrawRow">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Deposite</h5>
+                        <input type="number" class="form-control" placeholder="deposite your money" id="depositingAmount">
+                        <input type="submit" value="Deposite" class="btn btn-primary depositeAndWithdrawBtnClass"
+                            id="depositeInToAccountButton">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Withdraw</h5>
+                        <input type="number" class="form-control" placeholder="withdraw your money"
+                            id="withdrawingAmmount">
+                        <input type="submit" value="Withdraw" class="btn btn-warning depositeAndWithdrawBtnClass"
+                            id="withdrawFromAccountButton">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="tuba-bank.js"></script>
+</body>
+
+</html>

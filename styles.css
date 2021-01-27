@@ -1,0 +1,64 @@
+body{
+    padding: 100px;
+}
+
+#bankHeading{
+    color: indianred;
+    text-align: center;
+}
+
+.logInContainer{
+    width: 75%;
+    padding: 2rem;
+    text-align: left;
+    margin: 5rem auto;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+    border-radius: 15px;
+}
+
+.inputAtLogin{
+    display: block;
+    margin: 1rem 0;
+    width: 80%;
+}
+
+#transactionArea{
+    margin-top:8rem;
+
+}
+
+#depositCard{
+    background-color: #eb596e;
+}
+
+#withdrawCard{
+    background-color: #1a508b;
+}
+
+#balanceCard{
+    background-color: #16c79a;
+}
+
+.card{
+    color: honeydew;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 10px;
+}
+
+#moneyDepositAndWithdrawRow{
+    margin:2rem auto;
+}
+
+#moneyDepositAndWithdrawRow .card-body{
+    color: indigo;
+}
+
+.depositeAndWithdrawBtnClass{
+    margin-top: 1.5rem;
+}
